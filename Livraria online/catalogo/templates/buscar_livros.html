@@ -1,0 +1,17 @@
+<form method="get">
+    <input type="text" name="q" placeholder="Buscar livros..." />
+    <button type="submit">Buscar</button>
+</form>
+
+{% if livros %}
+    <ul>
+        {% for livro in livros %}
+            <li>
+                <img src="{{ livro.imagem_capa }}" alt="Capa do livro">
+                <h3>{{ livro.titulo }}</h3>
+                <p>Autor: {{ livro.autor }}</p>
+                <p>{{ livro.descricao }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
